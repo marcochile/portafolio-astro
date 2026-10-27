@@ -1,0 +1,31 @@
+---
+import Layout from "@/layouts/Layout.astro";
+
+const proyectos = [
+  {
+    image: "./01.jpeg",
+    titulo: "Proyecto 1",
+    descripcion: "Descripcion del proyecto 01",
+  },
+  {
+    image: "./02.jpeg",
+    titulo: "Proyecto 2",
+    descripcion: "Descripcion del proyecto 02",
+  },
+  {
+    image: "./03.jpeg",
+    titulo: "Proyecto 3",
+    descripcion: "Descripcion del proyecto 03",
+  },
+];
+---
+
+<Layout title="Proyectos">
+  {proyectos.map((proyecto) => (
+    <article>
+      <img src={proyecto.image} alt={proyecto.titulo} width="300" />
+      <h2>{proyecto.titulo}</h2>
+      <p>{proyecto.descripcion}</p>
+    </article>
+  ))}
+</Layout>
